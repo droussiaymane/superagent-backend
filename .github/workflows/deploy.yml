@@ -56,7 +56,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << EOF
             set -e
-            rm -r superagent-backend
+            rm -rf superagent-backend
             git clone https://x-access-token:${{ secrets.ORG_GH_TOKEN }}@github.com/Rapidstartupio/superagent-backend.git
             cd superagent-backend
             # Writing secrets to the .env file in superagent-latest directory
